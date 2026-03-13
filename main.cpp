@@ -5,7 +5,7 @@
 using namespace std;
 const int SIZE = 3;
 const int MIN = 10000, MAX = 99999;
-double defaultp[SIZE] = {0.00, 0.00, 0.00}; //line 63 fails w/o this
+double defaultp[SIZE] = {0.00, 0.00, 0.00}; //line 63 fails without this
 
 class Chair {
 private:
@@ -83,8 +83,12 @@ int main() {
     temp[0] = 626.26;
     temp[1] = 515.15;
     temp[2] = 757.57;
-    collection[0] = Chair(4, temp);
+    collection[2] = Chair(4, temp);
     for (int i = 0; i < SIZE; i++)
         collection[i].print();
+    
+    //shows that the default constructor is random
+    Chair *test = new Chair;
+    test->print();
     return 0;
 }
