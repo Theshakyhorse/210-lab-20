@@ -5,6 +5,7 @@
 using namespace std;
 const int SIZE = 3;
 const int MIN = 10000, MAX = 99999;
+double defaultp[SIZE] = {0.00, 0.00, 0.00};
 
 class Chair {
 private:
@@ -18,7 +19,7 @@ public:
         for (int i = 0; i < SIZE; i++)
             prices[i] = (rand() % (MAX-MIN+1) + MIN)/ (double) 100;
     }
-    Chair(int l, double p[]) {
+    Chair(int l, double p[]= defaultp) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
@@ -50,6 +51,7 @@ public:
 };
 
 int main() {
+    srand(time(0));
     cout << fixed << setprecision(2);
 
     //creating pointer to first chair object
@@ -58,11 +60,11 @@ int main() {
     chairPtr->setPrices(121.21, 232.32, 414.14);
     chairPtr->print();
     //creating dynamic chair object with constructor
-    //Chair *livingChair = new Chair(3);
-    //livingChair->setPrices(525.25, 434.34, 252.52);
-    //livingChair->print();
-    //delete livingChair;
-    //livingChair = nullptr;
+    Chair *livingChair = new Chair(3);
+    livingChair->setPrices(525.25, 434.34, 252.52);
+    livingChair->print();
+    delete livingChair;
+    livingChair = nullptr;
 
     //creating dynamic array of chair objects
     double temp[SIZE] = {441.41, 552.52, 663.63};
