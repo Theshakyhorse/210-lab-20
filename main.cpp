@@ -5,7 +5,7 @@
 using namespace std;
 const int SIZE = 3;
 const int MIN = 10000, MAX = 99999;
-double defaultp[SIZE] = {0.00, 0.00, 0.00};
+double defaultp[SIZE] = {0.00, 0.00, 0.00}; //line 63 fails w/o this
 
 class Chair {
 private:
@@ -74,11 +74,15 @@ int main() {
     collection[0] = Chair(4, temp);
     //collection[1].setLegs(4);
     //collection[1].setPrices(484.84, 959.59, 868.68);
-    double temp[SIZE] = {484.84, 959.59, 868.68};
+    temp[0] = 484.84;
+    temp[1] = 959.59;
+    temp[2] = 868.68;
     collection[1] = Chair(4, temp);
     //collection[2].setLegs(4);
     //collection[2].setPrices(626.26, 515.15, 757.57);
-    double temp[SIZE] = {626.26, 515.15, 757.57};
+    temp[0] = 626.26;
+    temp[1] = 515.15;
+    temp[2] = 757.57;
     collection[0] = Chair(4, temp);
     for (int i = 0; i < SIZE; i++)
         collection[i].print();
