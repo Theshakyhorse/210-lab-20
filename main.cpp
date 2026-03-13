@@ -64,17 +64,20 @@ int main() {
     //delete livingChair;
     //livingChair = nullptr;
 
-    double temp[SIZE] = {441.41, 552.52, 663.63};
-
     //creating dynamic array of chair objects
+    double temp[SIZE] = {441.41, 552.52, 663.63};
     Chair *collection = new Chair[SIZE];
     //collection[0].setLegs(4);
     //collection[0].setPrices(441.41, 552.52, 663.63);
     collection[0] = Chair(4, temp);
     //collection[1].setLegs(4);
     //collection[1].setPrices(484.84, 959.59, 868.68);
+    double temp[SIZE] = {484.84, 959.59, 868.68};
+    collection[1] = Chair(4, temp);
     //collection[2].setLegs(4);
     //collection[2].setPrices(626.26, 515.15, 757.57);
+    double temp[SIZE] = {626.26, 515.15, 757.57};
+    collection[0] = Chair(4, temp);
     for (int i = 0; i < SIZE; i++)
         collection[i].print();
     return 0;
